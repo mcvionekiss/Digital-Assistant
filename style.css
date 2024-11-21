@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background: #0073e6;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+#quote {
+    font-style: italic;
+    margin-top: 5px;
+}
+
+main {
+    padding: 20px;
+}
+
+#task-input {
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1 1 calc(25% - 10px);
+}
+
+form button {
+    background: #0073e6;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #005bb5;
+}
+
+#tasks {
+    margin-top: 20px;
+}
+
+.week {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.day {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    flex: 1 1 calc(33.33% - 10px);
+    min-height: 150px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the checkbox and the text */
+    margin-bottom: 5px;
+}
+
+.task input[type="checkbox"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.task span.completed span {
+    text-decoration: line-through;
+    color: grey;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+</head>
+<body>
+    <header>
+        <h1>Task Manager</h1>
+        <p id="quote"></p>
+    </header>
+
+    <main>
+        <section id="task-input">
+            <h2>Add a New Task</h2>
+            <form id="taskForm">
+                <input type="text" id="taskName" placeholder="Task Name" required>
+                <input type="date" id="dueDate" required>
+                <select id="priority" required>
+                    <option value="">Select Priority</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option value="School">School</option>
+                    <option value="Social">Social</option>
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                </select>
+                <button type="submit">Add Task</button>
+            </form>
+        </section>
+
+        <section id="tasks">
+            <h2>Weekly Tasks</h2>
+            <div class="week">
+                <div id="Monday" class="day"><h3>Monday</h3></div>
+                <div id="Tuesday" class="day"><h3>Tuesday</h3></div>
+                <div id="Wednesday" class="day"><h3>Wednesday</h3></div>
+                <div id="Thursday" class="day"><h3>Thursday</h3></div>
+                <div id="Friday" class="day"><h3>Friday</h3></div>
+                <div id="Saturday" class="day"><h3>Saturday</h3></div>
+                <div id="Sunday" class="day"><h3>Sunday</h3></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
