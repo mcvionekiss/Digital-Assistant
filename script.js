@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     const quoteElement = document.getElementById("quote");
 
-    // Fetch a daily motivational quote
+    // Insert randomized quote from API
     async function fetchQuote() {
         try {
             const response = await fetch("https://api.quotable.io/random");
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     fetchQuote();
 
-    // Add a task to a specific day
+    // Add task from the form to the the specific tab of the day
     taskForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -23,11 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const dueDate = new Date(document.getElementById("dueDate").value);
         const priority = document.getElementById("priority").value;
         const category = document.getElementById("category").value;
+        
+        const dayName = days[dueDate.getDay()] || "Sunday";
 
-        // Determine the day of the week
-        const dayName = days[dueDate.getDay() - 1] || "Sunday";
-
-        // Create the task element
+        // Create new user task
         const taskElement = document.createElement("div");
         taskElement.classList.add("task");
         taskElement.innerHTML = `
@@ -35,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <span>${taskName} [${category}] - ${priority}</span>
         `;
 
-        // Append the task to the corresponding day
+        // Add the task to the corresponding tab
         document.getElementById(dayName).appendChild(taskElement);
 
         // Add event listener for checkbox
@@ -47,11 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 taskElement.classList.remove("completed");
             }
-            // Reset the form
+    
             taskForm.reset();
         });
 
-        // Reset the form
+
         taskForm.reset();
 
     });
