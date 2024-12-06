@@ -1,15 +1,16 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Gill Sans';
     line-height: 1.6;
     margin: 0;
     padding: 0;
     color: #333;
+    background-color: #9EB4D1;
 }
 
 header {
-    background: #0073e6;
+    background: #224F80;
     color: white;
-    padding: 20px 0;
+    padding: 45px;
     text-align: center;
 }
 
@@ -23,6 +24,7 @@ header h1 {
 }
 
 main {
+    color: #333;
     padding: 20px;
 }
 
@@ -65,6 +67,7 @@ form button:hover {
 }
 
 .day {
+    background-color: #f6f9fa;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
@@ -75,7 +78,7 @@ form button:hover {
 .task {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between the checkbox and the text */
+    gap: 10px; 
     margin-bottom: 5px;
 }
 
