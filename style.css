@@ -111,6 +111,20 @@ form button:hover {
     background: #b71c1c;
 }
 
+.edit-btn {
+    background: #FFA726;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.edit-btn:hover {
+    background: #FB8C00;
+}
+
 footer {
     text-align: center;
     margin-top: 20px;
