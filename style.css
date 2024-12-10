@@ -110,3 +110,8 @@ form button:hover {
 .delete-btn:hover {
     background: #b71c1c;
 }
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
