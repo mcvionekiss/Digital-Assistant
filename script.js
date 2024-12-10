@@ -3,16 +3,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     const quoteElement = document.getElementById("quote");
 
-    // Insert randomized quote from API
-    async function fetchQuote() {
-        try {
-            const response = await fetch("https://api.quotable.io/random");
-            const data = await response.json();
-            quoteElement.textContent = `"${data.content}" - ${data.author}`;
-        } catch (error) {
-            quoteElement.textContent = "Stay motivated! You got this!";
-        }
-    }
+    // Fetch a random quote from the Quotes API and display it
+    const fetchQuote = () => {
+        const apiKey = '+6zS5fDiLAHq1xEO37HMUw==ZBzkzrodRk2PuDFh'; 
+        const url = 'https://api.api-ninjas.com/v1/quotes?category=inspirational';
+
+        fetch(url, {
+            method: 'GET',
+            headers: { 'X-Api-Key': apiKey }
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.json();
+        })
+        .then(data => {
+            const quoteElement = document.getElementById('quote');
+            if (data && data.length > 0) {
+                quoteElement.textContent = `"${data[0].quote}" - ${data[0].author}`;
+            } else {
+                quoteElement.textContent = "No quotes available.";
+            }
+        })
+        .catch(error => console.error('Error fetching the quote:', error));
+    };
     fetchQuote();
 
     // Add task from the form to the the specific tab of the day
