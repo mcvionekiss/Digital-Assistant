@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         taskElement.innerHTML = `
             <input type="checkbox">
             <span>${taskName} [${category}] - ${priority}</span>
+            <button class="delete-btn">Delete</button>
         `;
 
         // Add the task to the corresponding tab
@@ -63,6 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
             taskForm.reset();
         });
 
+        // Add event listener for deleting a task
+        const deleteButton = taskElement.querySelector(".delete-btn");
+        deleteButton.addEventListener("click", () => {
+            taskElement.remove();
+        });
 
         taskForm.reset();
 
